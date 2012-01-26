@@ -1,0 +1,6 @@
+/mnt/osm/osm/mapserver-6.0.1
+-DHAVE_VSNPRINTF -DNEED_STRLCPY -DNEED_STRLCAT -DNEED_STRRSTR -DUSE_WMS_SVR -DUSE_PROJ -DUSE_AGG_SVG_SYMBOLS -DUSE_GD_GIF -DUSE_GD_PNG -DUSE_GD_JPEG -DUSE_GD_WBMP -DUSE_GD_FT -DGD_HAS_FTEX_XSHOW -DGD_HAS_GDIMAGEGIFPTR -DGD_HAS_GETBITMAPFONTS -DGD_HAS_GET_TRUE_COLOR_PIXEL -DUSE_ICONV -DUSE_GIF -DUSE_PNG -DUSE_ZLIB -DUSE_FREETYPE
+-I. -I/usr/include
+-L. -lmapserver -lfreetype -lz -lgd -L/usr/lib -lgd -ljpeg -lfreetype -lz -lpng -lz -lXpm -lX11 -lexpat -lproj -ljpeg -lpng -lgif -lc -lz -lm -lstdc++
+
+#define MS_VERSION "6.0.1"

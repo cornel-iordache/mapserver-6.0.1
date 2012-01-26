@@ -1,0 +1,56 @@
+#!/bin/sh
+CONFIG_LIBS="-lfreetype -lz -lgd -L/usr/lib -lgd -ljpeg -lfreetype -lz -lpng -lz -lXpm -lX11  -lexpat   -lproj -ljpeg -lpng -lgif         -lc    -lz   -lm -lstdc++  "
+CONFIG_DEP_LIBS=""
+CONFIG_CFLAGS="-O2 -fPIC -Wall  -DNDEBUG    -DHAVE_VSNPRINTF -DNEED_STRLCPY -DNEED_STRLCAT -DNEED_STRRSTR                   -DUSE_WMS_SVR        -DUSE_PROJ -DUSE_AGG_SVG_SYMBOLS    -DUSE_GD_GIF -DUSE_GD_PNG -DUSE_GD_JPEG -DUSE_GD_WBMP -DUSE_GD_FT -DGD_HAS_FTEX_XSHOW -DGD_HAS_GDIMAGEGIFPTR -DGD_HAS_GETBITMAPFONTS -DGD_HAS_GET_TRUE_COLOR_PIXEL -DUSE_ICONV -DUSE_GIF -DUSE_PNG -DUSE_ZLIB -DUSE_FREETYPE   -DDISABLE_CVSID -I/usr/include/freetype2     -I/usr/include -Irenderers/agg/include                  "
+CONFIG_DEFINES="  -DHAVE_VSNPRINTF -DNEED_STRLCPY -DNEED_STRLCAT -DNEED_STRRSTR                   -DUSE_WMS_SVR        -DUSE_PROJ -DUSE_AGG_SVG_SYMBOLS    -DUSE_GD_GIF -DUSE_GD_PNG -DUSE_GD_JPEG -DUSE_GD_WBMP -DUSE_GD_FT -DGD_HAS_FTEX_XSHOW -DGD_HAS_GDIMAGEGIFPTR -DGD_HAS_GETBITMAPFONTS -DGD_HAS_GET_TRUE_COLOR_PIXEL -DUSE_ICONV -DUSE_GIF -DUSE_PNG -DUSE_ZLIB -DUSE_FREETYPE   -DDISABLE_CVSID"
+CONFIG_INCLUDES="-I/usr/include/freetype2     -I/usr/include -Irenderers/agg/include                  "
+CONFIG_VERSION="6.0.1"
+usage()
+{
+	cat <<EOF
+Usage: mapserver-config [OPTIONS]
+Options:
+	[--libs]
+	[--dep-libs]
+	[--cflags]
+	[--defines]
+	[--includes]
+	[--version]
+EOF
+	exit $1
+}
+
+if test $# -eq 0; then
+	usage 1 1>&2
+fi
+
+case $1 in 
+  --libs)
+    echo $CONFIG_LIBS
+    ;;
+
+  --defines)
+    echo $CONFIG_DEFINES
+    ;;
+
+  --includes)
+    echo $CONFIG_INCLUDES
+    ;;
+
+  --dep-libs)
+    echo $CONFIG_DEP_LIBS
+    ;;
+
+  --cflags)
+    echo $CONFIG_CFLAGS
+    ;;
+
+  --version)
+    echo $CONFIG_VERSION
+    ;;
+
+  *)
+    usage 1 1>&2
+    ;;
+
+esac

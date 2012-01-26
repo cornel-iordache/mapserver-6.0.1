@@ -1,0 +1,16 @@
+/******************************************************************************
+ * $Id: rbextend.i 2696 2004-02-02 23:37:24Z sean $
+ *
+ * Project:  MapServer
+ * Purpose:  Ruby-specific extensions to MapScript objects
+ * Author:
+ *
+ ******************************************************************************
+ *
+ * Ruby-specific mapscript code has been moved into this 
+ * SWIG interface file to improve the readibility of the main
+ * interface file.  The main mapscript.i file includes this
+ * file when SWIGRUBY is defined (via 'swig -ruby ...').
+ *
+ *****************************************************************************/
+
